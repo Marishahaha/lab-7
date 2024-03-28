@@ -12,7 +12,7 @@ def comparison():
     time_One = time.perf_counter()
 
     for i in range(1000000):
-        x = array_One[i] * array_Two[i]
+        prod = array_One[i] * array_Two[i]
 
     time_Two = time.perf_counter()
     delta_One = time_Two - time_One
@@ -55,16 +55,25 @@ def hist():
 
 #  task 3
 def plot3d():
-    x = np.linspace(-np.pi, np.pi, 70)      # заданный диапазон
-    y = x                                   # функции
-    z = np.tan(x)                           
+    x_coord = np.linspace(-np.pi, np.pi, 70)      # заданный диапазон
+    y_coord = x_coord                                   # функции
+    z_coord = np.tan(x_coord)                           
 
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
-    ax.plot(x, y, z, label='parametric curve')
+    ax.plot(x_coord, y_coord, z_coord, label='parametric curve')
     plt.title('y=x;   z=tg(x)')
     plt.xlabel('x')
     plt.ylabel('y')
 
     plt.show()
+
+
+
+if __name__ == '__main__':
+    comparison()
+    hist()
+    plot3d()
+
+
 
